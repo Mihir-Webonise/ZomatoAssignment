@@ -9,6 +9,7 @@ public class ZomatoAssignmentActivity extends Activity {
     /** Called when the activity is first created. */
 	protected boolean _active = true;
 	protected int _splashTime = 5000;
+	Intent intent;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -25,14 +26,14 @@ public class ZomatoAssignmentActivity extends Activity {
 	                    if(_active) {
 	                        waited += 100;
 	                    }
+	                    intent = new Intent(ZomatoAssignmentActivity.this, CuisinesListDisplayerActivity.class);
 	                }
 	            } catch(InterruptedException e) {
 	                // do nothing
 	            } finally {
-	                finish();
-	                Intent intent = new Intent(ZomatoAssignmentActivity.this, NewZomatoAssignmentActivity.class);	        		
+	                finish(); 	        		
 	        		startActivity(intent);
-	                stop();
+	                //stop();
 	            }
 	        }
 	    };
